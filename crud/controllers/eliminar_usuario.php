@@ -1,14 +1,13 @@
 <?php
 
-if (!empty($_GET["$dni"])) {
-    $dni=$_GET["$dni"];
-    $sql=$conexcion->query("delete from usuarios where dni=$dni");
+if (!empty($_GET["dni"])) {
+    $dni=$_GET["dni"];
+    $sql=$conexion->query("DELETE FROM `usuarios` WHERE dni=$dni");
     if ($sql==1) {
-        echo '<div> usuario eliminado</div>';
+        echo '<div> persona eliminda</div>';
     } else {
-        echo '<div> error al eliminar </div>';
+        echo '<div> error en eliminar </div>';
     }
     
 }
-
 ?>

@@ -21,13 +21,13 @@
             <h3 class="text-center text-secondary" >registro de usuarios</h3>
             <?php 
             include "models/conexion.php";
-            include "controllers\eliminar_usuario.php";
-            include "controllers/registro_usuarios.php";
+            include "controllers/registro_usuario.php";
+            include "controllers/eliminar_usuario.php";
             ?>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre">
+                <input type="text" class="form-control" name="nombre" maxlength="10">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Apellido</label>
@@ -43,7 +43,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">correo</label>
-                <input type="text" class="form-control" name="s">
+                <input type="email" class="form-control" name="correo">
             </div>
             <button type="submit" class="btn btn-primary" name="btnregister" value="ok">Registrar</button>
         </form>

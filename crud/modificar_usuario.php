@@ -2,12 +2,12 @@
 include "models\conexion.php";
 $dni=$_GET["dni"];
 
-$sql=$conexion->query("select * from usuarios where dni_usuarios=$dni");
+$sql=$conexion->query("select * from usuarios where dni=$dni");
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,30 +18,30 @@ $sql=$conexion->query("select * from usuarios where dni_usuarios=$dni");
 <form class="col-4 p-3 m-auto" method="post">
             <div class="registro">
             <h3 class="text-center text-secondary" >modificar de usuarios</h3>
-            <input type="hidden" name="dni" VALUES="<?= $_GET["dni"]?>">
+            <input type="hidden" name="dni" value="<?= $_GET["dni"]?>">
             <?php 
             include "controllers\modificar_usuario.php";
             while ($datos=$sql->fetch_object()) { ?>
                 </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" VALUES="<?$datos->nombre?>">
+                        <input type="text" class="form-control" name="nombre" value="<?= $datos->nombre?>">
                     </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" VALUES="<?$datos->apellido?>">
+                    <input type="text" class="form-control" name="apellido" value="<?= $datos->apellido?>">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">dni</label>
-                    <input type="text" class="form-control" name="dni">
+                    <input type="text" class="form-control" name="dni" disabled value="<?= $datos->dni?>">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">fecha de nacimiento</label>
-                    <input type="date" class="form-control" name="fecha" VALUES="<?$datos->fecha_de_nacimiento?>">
+                    <input type="date" class="form-control" name="fecha" value="<?= $datos->fecha_de_nacimiento?>">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">correo</label>
-                    <input type="text" class="form-control" name="correo" VALUES="<?$datos->correo?>">
+                    <input type="text" class="form-control" name="correo" value="<?= $datos->correo?>">
                 </div>
             <?php }
             ?>
