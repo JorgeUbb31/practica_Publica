@@ -71,8 +71,8 @@
                                     <td><?= $datos->dni?></td>
                                     <td><?= $datos->correo?></td>
                                     <td>
-                                        <a href="modificar_usuario.php?dni=<?= $datos->dni?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                                        <a onclick="return eliminar()" href="index.php?dni=<?= $datos->dni?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="modificar_usuario.php?id=<?= $datos->id?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                        <a onclick="return eliminar()" href="index.php?id=<?= $datos->id?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php }

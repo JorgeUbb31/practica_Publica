@@ -1,8 +1,8 @@
 <?php
 
-if (!empty($_GET["dni"])) {
-    $dni=$_GET["dni"];
-    $sql=$conexion->query("DELETE FROM `usuarios` WHERE dni=$dni");
+if (!empty($_GET["id"])) {
+    $id=$_GET["id"];
+    $sql=$conexion->query("DELETE FROM `usuarios` WHERE id=$id");
     if ($sql==1) {
         echo '<div> persona eliminda</div>';
     } else {

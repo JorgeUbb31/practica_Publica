@@ -1,8 +1,8 @@
 <?php
 include "models\conexion.php";
-$dni=$_GET["dni"];
+$id=$_GET["id"];
 
-$sql=$conexion->query("select * from usuarios where dni=$dni");
+$sql=$conexion->query("select * from usuarios where id=$id");
 
 ?>
 
@@ -18,18 +18,18 @@ $sql=$conexion->query("select * from usuarios where dni=$dni");
 <form class="col-4 p-3 m-auto" method="post">
             <div class="registro">
             <h3 class="text-center text-secondary" >modificar de usuarios</h3>
-            <input type="hidden" name="dni" value="<?= $_GET["dni"]?>">
+            <input type="hidden" name="dni" value="<?= $_GET["id"]?>">
             <?php 
             include "controllers\modificar_usuario.php";
             while ($datos=$sql->fetch_object()) { ?>
                 </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="<?= $datos->nombre?>">
+                        <input type="text" class="form-control" name="nombre" value="<?= $datos->nombre?>" maxlength="10">
                     </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" value="<?= $datos->apellido?>">
+                    <input type="text" class="form-control" name="apellido" value="<?= $datos->apellido?>" maxlength="10">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">dni</label>
@@ -41,7 +41,7 @@ $sql=$conexion->query("select * from usuarios where dni=$dni");
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">correo</label>
-                    <input type="text" class="form-control" name="correo" value="<?= $datos->correo?>">
+                    <input type="email" class="form-control" name="correo" value="<?= $datos->correo?>">
                 </div>
             <?php }
             ?>
