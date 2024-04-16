@@ -8,7 +8,7 @@ if (!empty($_POST["btnregister"])) {
         $dni=$_POST["dni"];
         $fecha=$_POST["fecha"];
         $correo=$_POST["correo"];
-        $sql=$conexion->query("UPDATE `usuarios` SET `nombre`='$nombre',`apellido`='$apellido',`fecha_de_nacimiento`='$fecha',`correo`='$correo' WHERE dni=$id");
+        $sql=$conexion->query("UPDATE `usuarios` SET `nombre`='$nombre',`apellido`='$apellido',`fecha_de_nacimiento`='$fecha',`correo`='$correo' WHERE id=$id");
         if ($sql==1) {
             header("location:index.php");
         } else {
